@@ -57,7 +57,7 @@ for each in [
         this = df[df.iso_code==code]
         content = list(this[each].dropna())
         zeros = len(dates) - len(content)
-        column = ([0] * zeros) + [ i / 10000 for i in content]
+        column = ([0] * zeros) + [ i for i in content]
         new[code] = column
     new.round(3).to_csv(each + '.csv')
 
